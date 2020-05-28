@@ -12,9 +12,7 @@ public class DescomprimirHuffman {
      public String descomprimir(String cadena){
         String[] lineasDiccionario = cadena.split("\n");
         ArrayList<NodoComprimido> nodosDiccionarios = listNodosDiccionarios(lineasDiccionario);
-        String contenidoDescomprimido = traducir(nodosDiccionarios, lineasDiccionario[3]);
-        
-        return contenidoDescomprimido;
+        return traducir(nodosDiccionarios, lineasDiccionario[3]);
     }
     
     public ArrayList<NodoComprimido> listNodosDiccionarios(String[] lineasDiccionario){
@@ -41,7 +39,7 @@ public class DescomprimirHuffman {
         
         for(int i=0; i < mensaje.length(); i++){
             
-            aux = aux + Character.toString(mensaje.charAt(i));
+            aux = aux + mensaje.charAt(i);
             
             for(NodoComprimido nodo: diccionario){
                 if(aux.equals(nodo.getCodigo())){

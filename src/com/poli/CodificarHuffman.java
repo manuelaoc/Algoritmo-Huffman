@@ -143,7 +143,9 @@ public class CodificarHuffman {
             pw.println(caracteresCadenaPorComa.substring(0, caracteresCadenaPorComa.length()-1));
             pw.println(codigosPorComa.substring(0, codigosPorComa.length()-1));
             pw.println("Ұ");
-            pw.println(codificarTexto(codigos, cadena));
+            String cadenaComprimida = codificarTexto(codigos, cadena);
+            pw.println(cadenaComprimida);
+            System.out.println("Cadena comprimida: " + cadenaComprimida + "\n");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -174,8 +176,7 @@ public class CodificarHuffman {
 
     public String codificarTexto(String codigo, String palabras) {
 
-        // Se colocan todas las letras en mayuscula 
-        char[] charArrayP = palabras.toLowerCase().toCharArray();
+        char[] charArrayP = palabras.toCharArray();
         String palabra = "";
         String[] lineas = codigo.split("\n");
 
